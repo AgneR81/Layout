@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Layout</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__wrap">
+
+                </div>
+            </div>
+        </header>
+        <section class="section">
+            <div class="container">
+                <div class="section__wrap">
+                    <div class="img__wrap">
+                        <!-- <img src="./img/gallery/1.jpeg" alt="pic"> -->
+                        <!-- <img src="./img/gallery/2.jpeg" alt="pic">
+                        <img src="./img/gallery/3.jpeg" alt="pic"> -->
+                    </div>
+                    <div class="left__arrow" onclick="press(-1)">
+                        <img src="./img/ico/left-arrow.svg" alt="leftarrow">
+                    </div>
+                    <div class="right__arrow" onclick="press(1)">
+                        <img src="./img/ico/right-arrow.svg" class="svg" alt="rightarrow">
+                    </div>
+                    <script>
+                        let sum = 0;
+                        let kiek = 2;
+
+                        let HTML = '';
+
+                        function press(num) {
+
+                            const galleryImg = ['1.jpeg', '2.jpeg', '3.jpeg'];
+                            let where = document.querySelector('.img__wrap');
+
+                            sum += num;
+                            if (sum > kiek) {
+                                sum = 0
+                            }
+                            if (sum < 0) {
+                                sum = kiek;
+                            }
+
+                            HTML = `<img src="./img/gallery/${galleryImg[sum]}" alt="img">`;
+                            where.innerHTML = HTML;
+
+                        }
+                    </script>  
+                </div>  
+            </div>      
+        </section>
+        <main class="main">
+            <div class="container">
+                
+                    <div class="album__navigation"></div> -->
+                <div class="main__album">
+                    <div class="album__box"></div>
+                    <div class="album__box"></div>
+                    <div class="album__box"></div>
+                    <div class="album__box"></div>
+                </div>    
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrap">
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
